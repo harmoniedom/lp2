@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+{% if prenom is defined %}
+    <div style = "display: block; float: right">
+
+        <img src="{{ url('client_photo',{prenom:prenom}) }}"/>
+
+    </div>
+{% endif %}
+    {% if photo is defined%}
+        <div style = "display: block; float: right">
+
+            <img src="{{ url('clientBR_photo',{prenom:photo}) }}"/>
+
+        </div>
+    {% endif %}
+{% endblock %}

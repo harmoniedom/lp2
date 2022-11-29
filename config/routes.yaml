@@ -1,3 +1,9 @@
 controllers:
     resource: ../src/Controller/
     type: attribute
+
+client_info_yaml:
+    path: /client/info/yaml/{prenom}
+    controller: App\Controller\ClientController::info
+    requirements:
+       prenom: "^(?!-).+[a-zA-Zéèà][^ .](?<!-)$"

@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Template Twig</title>
+</head>
+<body>
+Le prénom de {{prenom}} est Tintin {{render(path('client_afficher_photo',{prenom:prenom}))}}
+</body>
+</html>

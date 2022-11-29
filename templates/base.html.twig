@@ -2,18 +2,89 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
-
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
+        <title> Acceuil </title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <div class="pure-menu pure-menu-horizontal">
+            <ul class="pure-menu-list">
+
+                {# HOME #}
+                <li class="pure-menu-item pure-menu-selected">
+                    <a href="/" class="pure-menu-link">Home</a>
+                </li>
+
+                {# TP 1 #}
+                <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                    <a href="/TP1" id="menuLink1" class="pure-menu-link">TP 1</a>
+                    <ul class="pure-menu-children">
+                        <li class="pure-menu-item">
+                            <a href="/client/info/php/{prenom}/" class="pure-menu-link">Partie PHP</a>
+                        </li>
+                        <li class="pure-menu-item">
+                            <a href="/client/info/yaml/{prenom}/" class="pure-menu-link">Partie Yaml</a>
+                        </li>
+                        <li class="pure-menu-item">
+                            <a href="/client/info/{prenom}/" class="pure-menu-link">Partie Annotation</a>
+                        </li>
+                    </ul>
+                </li>
+
+                {# TP 2 #}
+                <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                    <a href="/TP2" id="menuLink1" class="pure-menu-link">TP 2</a>
+                    <ul class="pure-menu-children">
+                        {% block Img %}
+                            {{render(controller("App\\Controller\\ImageController::afficher"))}}
+                        {% endblock %}
+                    </ul>
+                </li>
+            </ul>
+
+            {# TP 3 #}
+            <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                <a href="/3" id="menuLink1" class="pure-menu-link">TP 3</a>
+                <ul class="pure-menu-children">
+                    <li class="pure-menu-item">
+                        <a href="/TP3/Access/" class="pure-menu-link">accès au site</a>
+                    </li>
+                </ul>
+            </li>
+
+            {# TP 4 #}
+            <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+                <a href="/TP4" id="menuLink1" class="pure-menu-link">TP 4</a>
+                <ul class="pure-menu-children">
+                    <li class="pure-menu-item">
+                        <a href="/TP4/Inscription/" class="pure-menu-link">Inscription</a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a href="/TP4/Login/" class="pure-menu-link">Login</a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a href="/TP4/Register/" class="pure-menu-link">s'enregistrer</a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a href="/TP4/Liste/Utilisateur" class="pure-menu-link">liste</a>
+                    </li>
+
+                </ul>
+            </li>
+
+            {# TP 5 #}
+            <li class="pure-menu-item">
+                <a href="/login/" class="pure-menu-link">connexion</a>
+            </li>
+            <li class="pure-menu-item">
+                <a href="/register/" class="pure-menu-link">s'enregistrer</a>
+            </li>
+
+
+        </div>
+
+
+        {% block body %}
+        {% endblock %}
+
     </body>
 </html>

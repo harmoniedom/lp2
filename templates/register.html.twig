@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <h1>ORM TP5</h1>
+
+    {% if error is defined %}
+        {{ error }}
+    {% endif %}
+
+    {{ form_start(registerForm) }}
+
+    {{ form_row(registerForm.email) }}
+    {{ form_row(registerForm.password) }}
+
+
+    <button> Submit!</button>
+
+    {{ form_end(registerForm) }}
+
+
+{% endblock %}

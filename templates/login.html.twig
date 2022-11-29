@@ -1,0 +1,15 @@
+
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+
+    <h1>Formulaire TD4</h1>
+
+    {{ form(loginForm) }}
+
+    {% if erreur %}
+        <p>{{errorMessage}} </p>
+    {% endif %}
+
+{% endblock %}
